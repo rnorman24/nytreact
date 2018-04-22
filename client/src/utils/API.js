@@ -2,8 +2,12 @@ import axios from "axios";
 
 export default {
   // Gets all articles
-  getArticles: function() {
-    return axios.get("/api/articles");
+  getArticles: function(query, startYear, endYear) {
+    return axios.get("/api/articles", { params: {
+      q: query,
+      begin_date: startYear,
+      end_date: endYear
+    } });
   },
   // Gets the article with the given id
   getArticle: function(id) {
@@ -13,7 +17,7 @@ export default {
   deleteArticle: function(id) {
     return axios.delete("/api/articles/" + id);
   },
-  // Saves a book to the database
+  // Saves an article to the database
   saveArticle: function(articleData) {
     return axios.post("/api/articles", articleData);
   }

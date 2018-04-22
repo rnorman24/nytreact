@@ -5,7 +5,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 
 class Articles extends Component {
   state = {
@@ -46,7 +46,7 @@ class Articles extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.topic && this.state.startYear) {
-      API.saveArticle({
+      API.getArticles({
         title: this.state.title,
         author: this.state.date,
         synopsis: this.state.url
