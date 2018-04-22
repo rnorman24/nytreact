@@ -90,7 +90,10 @@ class Articles extends Component {
                 Search
               </FormBtn>
             </form>
-          
+          </Col>
+        </Row>
+        <Row>
+          <Col size='xs-12'>
             <Jumbotron>
               <h1>Results</h1>
             </Jumbotron>
