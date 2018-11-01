@@ -1,19 +1,16 @@
 import axios from "axios";
+import filterParams from "./filterParams";
 
 export default {
-  // Gets all articles
-  getArticles: function(query, startYear, endYear) {
-    return axios.get("/api/articles", { params: {
-      q: query,
-      begin_date: startYear,
-      end_date: endYear
-    } });
+  // Gets articles from the NYT API
+  getArticles: function(params) {
+    return axios.get("/api/nyt", { params: filterParams(params) });
   },
-  // Gets the article with the given id
-  getArticle: function(id) {
-    return axios.get("/api/articles/" + id);
+  // Gets all saved articles
+  getSavedArticles: function() {
+    return axios.get("/api/articles");
   },
-  // Deletes the article with the given id
+  // Deletes the saved article with the given id
   deleteArticle: function(id) {
     return axios.delete("/api/articles/" + id);
   },
