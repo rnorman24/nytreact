@@ -18,10 +18,8 @@
     "concurrently": "^4.0.1",
     "eslint": "^6.0.0",
     "express": "^4.16.4",
-    "handlebars": "^4.1.2",
-    "mongoose": "^5.3.8",
-    "nodemon": "^1.18.5",
-    "react-scripts": "^3.1.1",
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.19.4",
     "stringstream": "^1.0.0"
   }
 }
